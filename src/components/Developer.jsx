@@ -13,7 +13,7 @@ import * as THREE from 'three';
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
   const { progress } = useProgress();
-  
+
   if (progress < 100) {
     return (
       <Html center>
@@ -47,7 +47,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     if (actions && actions[animationName]) {
       const action = actions[animationName];
       action.reset().fadeIn(0.5).play();
-      
+
       return () => {
         action.fadeOut(0.5);
         action.stop();

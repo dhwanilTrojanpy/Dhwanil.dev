@@ -10,7 +10,21 @@ import DemoComputer from '../components/DemoComputer.jsx';
 
 const projectCount = myProjects.length;
 
+import { useEffect } from 'react';
+
 const Projects = () => {
+  useEffect(() => {
+    return () => {
+      // Cleanup Three.js resources when component unmounts
+      const canvases = document.querySelectorAll('canvas');
+      canvases.forEach(canvas => {
+        const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+        if (gl) {
+          gl.getExtension('WEBGL_lose_context')?.loseContext();
+        }
+      });
+    };
+  }, []);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
   const handleNavigation = (direction) => {

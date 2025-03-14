@@ -8,6 +8,16 @@ import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/Experience.jsx';
 
 const App = () => {
+  useEffect(() => {
+    // Cleanup function
+    return () => {
+      // Force garbage collection of Three.js resources
+      if (window.THREE) {
+        window.THREE.Cache.clear();
+      }
+    };
+  }, []);
+
   return (
     <main className="max-w-7xl mx-auto relative">
       <Navbar />

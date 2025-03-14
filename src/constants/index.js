@@ -29,9 +29,8 @@ export const clientReviews = [
     img: 'assets/review1.png',
     review:
       'I enthusiastically recommend Dhwanil, who excelled as an AI Trainer-Software Engineer at Outlier. His innovative LLM training pipelines reduced model training time by 20% while boosting accuracy. Dhwanil integrated LangChain for real-time monitoring and resolved critical data drift issues swiftly. A collaborative problem-solver, he automated QA processes, cutting post-deployment bugs by 30%. A visionary in AI/software engineering.',
-      email: 'dhruvgangwani44@gmail.com',
-
-    },
+    email: 'dhruvgangwani44@gmail.com',
+  },
   {
     id: 2,
     name: 'Michael Regan',
@@ -39,28 +38,26 @@ export const clientReviews = [
     img: 'assets/review2.png',
     review:
       'Dhwanil delivered exceptional work as a software developer at Leader Frames, building critical features and maintaining internal tools with precision. His ability to consistently complete projects ahead of deadlines while ensuring flawless functionality made him indispensable. A proactive problem-solver with sharp technical skills—any team would benefit from his talent and reliability.                          ',
-      email: 'mregan@leaderframes.com',
-
-    },
+    email: 'mregan@leaderframes.com',
+  },
   {
     id: 3,
-    name: 'Sravan Kumar', 
+    name: 'Sravan Kumar',
     position: 'HR and Director at ITSM America ',
     img: 'assets/review3.png',
     review:
       'Dhwanil excelled as a Full Stack Engineer, delivering scalable FastAPI/.NET solutions that accelerated financial data processing by 40%. His React.js optimizations cut load times by 30%, while GenAI integrations boosted predictive analytics accuracy. A strategic problem-solver who consistently exceeded deadlines and elevated cross-functional collaboration—an invaluable asset to any tech team.',
     email: 'hr@itsmamerica.com',
-    },
+  },
   {
     id: 4,
     name: 'Jay Shah',
-    position: 'Senior Flutter Developer at Goldenmace', 
+    position: 'Senior Flutter Developer at Goldenmace',
     img: 'assets/review4.png',
     review:
       'I had the pleasure of collaborating with Dhwanil at Goldenmace, where he showcased exceptional skill as a Python Developer. His work on Raspberry Pi APIs and Flask deployments streamlined IoT solutions, while his secure JWT/OAuth implementations and MQTT integrations ensured robust system communication. A resourceful engineer who delivers innovative, production-ready code under tight deadlines. Highly recommended!',
-      email: 'dhwanilgandhi28@gmail.com',
-
-    },
+    email: 'jay.282726@gmail.com',
+  },
 ];
 
 export const myProjects = [
@@ -265,41 +262,44 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 };
 
 export const workExperiences = [
-    {
-      "id": 1,
-      "name": "Reality AI Labs",
-      "pos": "Generative AI Engineer",
-      "duration": "2025 - Present",
-      "title": "Built AI education tools using LangChain/OpenAI LLMs (GPT-4, Llama-3) and Python(FastAPI) with hybrid RAG architectures, improving semantic search precision by 25% and reducing inference costs via model quantization.",
-      "icon": "/assets/realityai.jpeg",
-      "animation": "victory"
-    },
-    {
-      "id": 2,
-      "name": "ITSM America",
-      "pos": "Software Engineer",
-      "duration": "2022 - Present",
-      "title": "Developed Python/React/C# microservices (FastAPI/.NET) for insurance/finance platforms, achieving 70% faster claims processing and 99.9% uptime at 50k+ RPM using cloud-native architectures.",
-      "icon": "/assets/genai.jpeg",
-      "animation": "clapping"
-    },
-    {
-      "id": 3,
-      "name": "NRI Distributions",
-      "pos": "Software Engineer",
-      "duration": "2022",
-      "title": "Engineered Python/Flask APIs with PostgreSQL/MongoDB, reducing API latency by 40% through query optimization and AWS serverless deployment (Lambda/EC2).",
-      "icon": "/assets/nri.jpeg",
-      "animation": "salute"
-    },
-    {
-      "id": 4,
-      "name": "Goldenmace IT",
-      "pos": "Python Developer",
-      "duration": "2019-2021",
-      "title": "Built real-time IoT systems using Python/Flask with MQTT and Azure, achieving 98% uptime for distributed Raspberry Pi networks through async programming.",
-      "icon": "/assets/goldenmace.jpeg",
-      "animation": "waving"
-    }
-  
+  {
+    id: 1,
+    name: 'Reality AI Labs',
+    pos: 'Generative AI Engineer',
+    duration: '2025 - Present',
+    title:
+      'Built AI education tools using LangChain/OpenAI LLMs (GPT-4, Llama-3) and Python(FastAPI) with hybrid RAG architectures, improving semantic search precision by 25% and reducing inference costs via model quantization.',
+    icon: '/assets/realityai.jpeg',
+    animation: 'victory',
+  },
+  {
+    id: 2,
+    name: 'ITSM America',
+    pos: 'Software Engineer',
+    duration: '2022 - Present',
+    title:
+      'Developed Python/React/C# microservices (FastAPI/.NET) for insurance/finance platforms, achieving 70% faster claims processing and 99.9% uptime at 50k+ RPM using cloud-native architectures.',
+    icon: '/assets/genai.jpeg',
+    animation: 'clapping',
+  },
+  {
+    id: 3,
+    name: 'NRI Distributions',
+    pos: 'Software Engineer',
+    duration: '2022',
+    title:
+      'Engineered Python/Flask APIs with PostgreSQL/MongoDB, reducing API latency by 40% through query optimization and AWS serverless deployment (Lambda/EC2).',
+    icon: '/assets/nri.jpeg',
+    animation: 'salute',
+  },
+  {
+    id: 4,
+    name: 'Goldenmace IT',
+    pos: 'Python Developer',
+    duration: '2019-2021',
+    title:
+      'Built real-time IoT systems using Python/Flask with MQTT and Azure, achieving 98% uptime for distributed Raspberry Pi networks through async programming.',
+    icon: '/assets/goldenmace.jpeg',
+    animation: 'waving',
+  },
 ];

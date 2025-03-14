@@ -18,7 +18,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     return <Loading />;
   }
 
-  const { nodes, materials, scene } = useGLTF('/models/animations/developer.glb');
+  const { scene } = useGLTF('/models/animations/developer.glb');
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 

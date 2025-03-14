@@ -12,6 +12,15 @@ import * as THREE from 'three';
 
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
+  const { progress } = useProgress();
+  
+  if (progress < 100) {
+    return (
+      <Html center>
+        <span className="text-white">Loading... {progress.toFixed(2)}%</span>
+      </Html>
+    );
+  }
 
   const { scene } = useGLTF('/models/animations/developer.glb');
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
@@ -115,6 +124,10 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   );
 };
 
-useGLTF.preload('/models/animations/developer.glb');
+useGLTF.preload('/models/animations/developer.glb', true); // Enable draco compression
+useFBX.preload('/models/animations/idle.fbx');
+useFBX.preload('/models/animations/salute.fbx');
+useFBX.preload('/models/animations/clapping.fbx');
+useFBX.preload('/models/animations/victory.fbx');
 
 export default Developer;

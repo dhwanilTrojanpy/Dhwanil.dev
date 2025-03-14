@@ -12,12 +12,13 @@ import * as THREE from 'three';
 
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
+  const { progress } = useProgress();
 
-  const { nodes, materials } = useGLTF('/models/animations/developer.glb');
-  const { scene } = useGLTF('/models/animations/developer.glb');
-  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
+  if (progress < 100) {
+    return <Loading />;
+  }
 
-  const { scene } = useGLTF('/models/animations/developer.glb');
+  const { nodes, materials, scene } = useGLTF('/models/animations/developer.glb');
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 
@@ -119,10 +120,15 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   );
 };
 
-useGLTF.preload('/models/animations/developer.glb', true); // Enable draco compression
-useFBX.preload('/models/animations/idle.fbx');
-useFBX.preload('/models/animations/salute.fbx');
-useFBX.preload('/models/animations/clapping.fbx');
-useFBX.preload('/models/animations/victory.fbx');
+// Preload with draco compression and lower detail
+useGLTF.preload('/models/animations/developer.glb', true);
+
+// Preload animations in sequence
+Promise.all([
+  useFBX.preload('/models/animations/idle.fbx'),
+  useFBX.preload('/models/animations/salute.fbx'),
+  useFBX.preload('/models/animations/clapping.fbx'),
+  useFBX.preload('/models/animations/victory.fbx')
+]);
 
 export default Developer;

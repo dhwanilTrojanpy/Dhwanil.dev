@@ -18,7 +18,26 @@ const DemoComputer = (props) => {
     if (txt) {
       txt.flipY = false;
     }
+    
+    return () => {
+      if (txt) {
+        txt.dispose();
+      }
+    };
   }, [txt]);
+
+  // Handle WebGL context loss
+  useEffect(() => {
+    const handleContextLost = () => {
+      console.warn('WebGL context lost, attempting to restore...');
+    };
+
+    const canvas = document.querySelector('canvas');
+    if (canvas) {
+      canvas.addEventListener('webglcontextlost', handleContextLost);
+      return () => canvas.removeEventListener('webglcontextlost', handleContextLost);
+    }
+  }, []);
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {

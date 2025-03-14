@@ -8,6 +8,7 @@ import React, { useEffect, useRef } from 'react';
 import { useGraph } from '@react-three/fiber';
 import { useAnimations, useFBX, useGLTF } from '@react-three/drei';
 import { SkeletonUtils } from 'three-stdlib';
+import * as THREE from 'three';
 
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
@@ -26,9 +27,11 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   clappingAnimation[0].name = 'clapping';
   victoryAnimation[0].name = 'victory';
 
+  const mixer = new THREE.AnimationMixer(clone);
   const { actions } = useAnimations(
     [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
     group,
+    mixer
   );
 
   useEffect(() => {

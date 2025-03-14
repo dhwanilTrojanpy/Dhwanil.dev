@@ -6,7 +6,7 @@ Files: developer.glb [981.62KB] > /Users/hsuwinlat/Desktop/jsm pj/threejscc-port
 
 import React, { useEffect, useRef } from 'react';
 import { useGraph } from '@react-three/fiber';
-import { useAnimations, useFBX, useGLTF } from '@react-three/drei';
+import { useAnimations, useFBX, useGLTF, useProgress, Html } from '@react-three/drei';
 import { SkeletonUtils } from 'three-stdlib';
 import * as THREE from 'three';
 

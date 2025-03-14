@@ -12,15 +12,10 @@ import * as THREE from 'three';
 
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
-  const { progress } = useProgress();
 
-  if (progress < 100) {
-    return (
-      <Html center>
-        <span className="text-white">Loading... {progress.toFixed(2)}%</span>
-      </Html>
-    );
-  }
+  const { nodes, materials } = useGLTF('/models/animations/developer.glb');
+  const { scene } = useGLTF('/models/animations/developer.glb');
+  const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
 
   const { scene } = useGLTF('/models/animations/developer.glb');
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { useGraph } from '@react-three/fiber';
 import { useAnimations, useFBX, useGLTF, useProgress } from '@react-three/drei';
@@ -29,7 +28,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   const { actions } = useAnimations(
     [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
-    group
+    group,
   );
 
   useEffect(() => {
@@ -49,8 +48,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0, -1, 0]} rotation={[0, Math.PI, 0]} scale={1}>
-        <primitive object={nodes.Hips} />
+      <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
@@ -107,7 +105,6 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         material={materials.Wolf3D_Outfit_Top}
         skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
       />
-      </group>
     </group>
   );
 };

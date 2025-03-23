@@ -33,7 +33,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
       const animationActions = useAnimations(
         [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
         group,
-        mixer
+        mixer,
       ).actions;
 
       setActions(animationActions);
@@ -124,5 +124,6 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     </group>
   );
 };
+useGLTF.preload('/models/animations/developer.glb');
 
 export default Developer;

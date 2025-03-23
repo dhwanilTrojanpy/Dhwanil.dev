@@ -33,7 +33,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   return (
     <group ref={group} {...props}>
-      {/* <primitive object={clone} scale={1} position={[0, -1, 0]} rotation={[0, Math.PI, 0]} /> */}
+      <primitive object={clone} scale={1} position={[0, -1, 0]} rotation={[0, Math.PI, 0]} />
     </group>
   );
 };

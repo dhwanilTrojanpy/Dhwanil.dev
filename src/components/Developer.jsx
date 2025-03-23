@@ -20,7 +20,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   const { actions } = useAnimations(
     [...animations, idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
-    group
+    group,
   );
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   return (
     <group ref={group} {...props}>
-      <primitive object={clone} scale={1} position={[0, -1, 0]} rotation={[0, Math.PI, 0]} />
+      {/* <primitive object={clone} scale={1} position={[0, -1, 0]} rotation={[0, Math.PI, 0]} /> */}
     </group>
   );
 };

@@ -26,14 +26,16 @@ const WorkExperience = () => {
 
         <div className="work-container">
           <div className="work-canvas">
-            <Canvas {...canvasConfig}>
-              <ambientLight intensity={1} />
-              <directionalLight position={[5, 5, 5]} intensity={2} />
-              <pointLight position={[-5, -5, -5]} intensity={1} />
+            {/* <Canvas {...canvasConfig}> */}
+            <Canvas>
+              <ambientLight intensity={7} />
+              <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+              <directionalLight position={[10, 10, 10]} intensity={1} />
+              {/* <pointLight position={[-5, -5, -5]} intensity={1} /> */}
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
-                <Developer position={[0, -1, 0]} rotation={[0, Math.PI, 0]} scale={2} animationName={animationName} />
+                <Developer position-y={-3} scale={3} animationName={animationName} />
               </Suspense>
             </Canvas>
           </div>

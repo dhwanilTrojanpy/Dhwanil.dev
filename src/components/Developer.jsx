@@ -32,11 +32,14 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <primitive object={nodes.Hips} />
-      <skinnedMesh
-        geometry={nodes.EyeLeft.geometry}
-        material={materials.Wolf3D_Eye}
-        skeleton={nodes.EyeLeft.skeleton}
-      />
+      <group name="Character">
+        <skinnedMesh
+          castShadow
+          receiveShadow
+          geometry={nodes.EyeLeft.geometry}
+          material={materials.Wolf3D_Eye}
+          skeleton={nodes.EyeLeft.skeleton}
+        />
       <skinnedMesh
         geometry={nodes.EyeRight.geometry}
         material={materials.Wolf3D_Eye}

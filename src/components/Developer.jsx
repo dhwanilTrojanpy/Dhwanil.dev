@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { useGraph } from '@react-three/fiber';
 import { useAnimations, useFBX, useGLTF, useProgress, Html } from '@react-three/drei';
@@ -12,31 +11,36 @@ THREE.Cache.enabled = true;
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();
   const { progress } = useProgress();
-
-  if (progress < 100) {
-    return <Loading />;
-  }
-
+  const [model, setModel] = useState(null);
+  const [actions, setActions] = useState(null);
   const { scene } = useGLTF('/models/animations/developer.glb');
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 
-  const { animations: idleAnimation } = useFBX('/models/animations/idle.fbx');
-  const { animations: saluteAnimation } = useFBX('/models/animations/salute.fbx');
-  const { animations: clappingAnimation } = useFBX('/models/animations/clapping.fbx');
-  const { animations: victoryAnimation } = useFBX('/models/animations/victory.fbx');
+  useEffect(() => {
+    const loadAnimations = async () => {
+      const { animations: idleAnimation } = await useFBX('/models/animations/idle.fbx');
+      const { animations: saluteAnimation } = await useFBX('/models/animations/salute.fbx');
+      const { animations: clappingAnimation } = await useFBX('/models/animations/clapping.fbx');
+      const { animations: victoryAnimation } = await useFBX('/models/animations/victory.fbx');
 
-  idleAnimation[0].name = 'idle';
-  saluteAnimation[0].name = 'salute';
-  clappingAnimation[0].name = 'clapping';
-  victoryAnimation[0].name = 'victory';
+      idleAnimation[0].name = 'idle';
+      saluteAnimation[0].name = 'salute';
+      clappingAnimation[0].name = 'clapping';
+      victoryAnimation[0].name = 'victory';
 
-  const mixer = new THREE.AnimationMixer(clone);
-  const { actions } = useAnimations(
-    [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
-    group,
-    mixer
-  );
+      const mixer = new THREE.AnimationMixer(clone);
+      const animationActions = useAnimations(
+        [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
+        group,
+        mixer
+      ).actions;
+
+      setActions(animationActions);
+    };
+
+    loadAnimations();
+  }, [clone]);
 
   useEffect(() => {
     if (actions && actions[animationName]) {
@@ -49,6 +53,10 @@ const Developer = ({ animationName = 'idle', ...props }) => {
       };
     }
   }, [animationName, actions]);
+
+  if (progress < 100) {
+    return <Loading />;
+  }
 
   return (
     <group ref={group} {...props} dispose={null}>
@@ -116,16 +124,5 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     </group>
   );
 };
-
-// Preload with draco compression and lower detail
-useGLTF.preload('/models/animations/developer.glb', true);
-
-// Preload animations in sequence
-Promise.all([
-  useFBX.preload('/models/animations/idle.fbx'),
-  useFBX.preload('/models/animations/salute.fbx'),
-  useFBX.preload('/models/animations/clapping.fbx'),
-  useFBX.preload('/models/animations/victory.fbx')
-]);
 
 export default Developer;

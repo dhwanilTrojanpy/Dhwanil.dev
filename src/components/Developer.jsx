@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 
 const Developer = (props) => {
-  const { nodes, materials } = useGLTF('public/models/animations/developer.glb');
+  const { nodes, materials } = useGLTF('/models/animations/developer.glb');
   return (
     <group {...props} dispose={null}>
       <primitive object={nodes.Hips} />
@@ -76,6 +76,6 @@ const Developer = (props) => {
   );
 };
 
-useGLTF.preload('public/models/animations/developer.glb');
+useGLTF.preload('/models/animations/developer.glb');
 
 export default Developer;

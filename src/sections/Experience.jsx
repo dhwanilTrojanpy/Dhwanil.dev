@@ -1,15 +1,15 @@
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
 // Configure for better performance
 const canvasConfig = {
   gl: {
-    powerPreference: "high-performance",
+    powerPreference: 'high-performance',
     antialias: false,
     stencil: false,
-    depth: false
-  }
+    depth: false,
+  },
 };
 
 import Developer from '../components/Developer.jsx';
@@ -46,7 +46,8 @@ const WorkExperience = () => {
                   onClick={() => setAnimationName(item.animation.toLowerCase())}
                   onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
                   onPointerOut={() => setAnimationName('idle')}
-                  className="work-content_container group">
+                  className="work-content_container group"
+                >
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="social-icon">
                       <img className="w-full h-full" src={item.icon} alt="" />

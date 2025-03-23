@@ -48,7 +48,10 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <primitive object={nodes.Hips} />
+      <group position={[0, -1, 0]} rotation={[0, Math.PI, 0]} scale={1}>
+        <primitive object={nodes.Hips} />
+        <primitive object={nodes.Armature} />
+      </group>
       <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}

@@ -23,11 +23,28 @@ const Developer = ({ animationName = 'idle', ...props }) => {
     [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
     group,
   );
-  useEffect(() => {
-    actions[animationName].reset().fadeIn(0.5).play();
+  // useEffect(() => {
+  //   actions[animationName].reset().fadeIn(0.5).play();
 
-    return () => actions[animationName].fadeOut(0.5);
-  }, [animationName]);
+  //   return () => actions[animationName].fadeOut(0.5);
+  // }, [animationName]);
+  useEffect(() => {
+    // Stop any current animation
+    Object.values(actions).forEach((action) => action?.stop());
+
+    // Play new animation if it exists
+    const currentAction = actions[animationName];
+    if (currentAction) {
+      currentAction.reset().fadeIn(0.5).play();
+      return () => currentAction.fadeOut(0.5);
+    }
+
+    // Fallback to idle animation if requested animation doesn't exist
+    if (actions.idle) {
+      actions.idle.reset().fadeIn(0.5).play();
+      return () => actions.idle.fadeOut(0.5);
+    }
+  }, [actions, animationName]);
 
   return (
     <group {...props} dispose={null} ref={group}>

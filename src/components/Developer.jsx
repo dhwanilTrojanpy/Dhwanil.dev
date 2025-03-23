@@ -19,8 +19,10 @@ const Developer = ({ animationName = 'idle', ...props }) => {
   clappingAnimation[0].name = 'clapping';
   victoryAnimation[0].name = 'victory';
 
-  const { actions } = useAnimations([idleAnimation[0]], group);
-
+  const { actions } = useAnimations(
+    [idleAnimation[0], saluteAnimation[0], clappingAnimation[0], victoryAnimation[0]],
+    group,
+  );
   useEffect(() => {
     actions[animationName].reset().fadeIn(0.5).play();
 

@@ -24,9 +24,14 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
-            Dhwanil.dev
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
+              Dhwanil.dev
+            </a>
+            <span className="hidden sm:block bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+              This website is created by me using React Three.js/drei
+            </span>
+          </div>
 
           <button
             onClick={toggleMenu}

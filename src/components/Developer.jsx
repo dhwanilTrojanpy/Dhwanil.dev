@@ -49,7 +49,8 @@ const Developer = ({ animationName = 'idle', ...props }) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <primitive object={nodes.Hips} />
+      <group position={[0, -1, 0]} rotation={[0, Math.PI, 0]} scale={1}>
+        <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
@@ -106,6 +107,7 @@ const Developer = ({ animationName = 'idle', ...props }) => {
         material={materials.Wolf3D_Outfit_Top}
         skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
       />
+      </group>
     </group>
   );
 };

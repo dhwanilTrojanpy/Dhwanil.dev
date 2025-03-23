@@ -264,7 +264,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Reality AI Labs',
+    name: 'Reality AI Labs(Open Source Contribution)',
     pos: 'Generative AI Engineer',
     duration: '2025 - Present',
     title:

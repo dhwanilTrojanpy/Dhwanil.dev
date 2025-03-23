@@ -1,10 +1,13 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGraph } from '@react-three/fiber';
 import { useAnimations, useFBX, useGLTF, useProgress, Html } from '@react-three/drei';
 import { SkeletonUtils } from 'three-stdlib';
 import * as THREE from 'three';
 import Loading from './Loading';
+
+// Enable memory info
+THREE.Cache.enabled = true;
 
 const Developer = ({ animationName = 'idle', ...props }) => {
   const group = useRef();

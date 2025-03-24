@@ -4,7 +4,9 @@ const Footer = () => {
       <div className="text-white-500 flex gap-2">
         <p>Terms & Conditions</p>
         <p>|</p>
-        <a href="https://www.linkedin.com/in/dhwanil-gandhi" className="hover:text-white transition-colors">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/gandhidhwanil28" className="hover:text-white transition-colors">
+          LinkedIn
+        </a>
       </div>
 
       <div className="flex gap-3">

@@ -48,7 +48,8 @@ const About = () => {
 
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex flex-col justify-center items-center">
+              <p className="text-white-600 text-sm mb-4 italic text-center px-4">You can play with this 3D globe</p>
               <Globe
                 height={326}
                 width={326}

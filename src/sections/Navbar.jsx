@@ -28,7 +28,7 @@ const Navbar = () => {
             <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
               Dhwanil.dev
             </a>
-            <span className="hidden sm:block bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
+            <span className="block text-xs md:text-sm bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text">
               This website is created by me using React Three.js/drei
             </span>
           </div>

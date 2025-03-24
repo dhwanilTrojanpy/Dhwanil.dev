@@ -289,7 +289,7 @@ export const workExperiences = [
     pos: 'Freelance Software Engineer - AI Trainer',
     duration: '2024 - 2025',
     title:
-      'As a Freelance Software Engineer at Outlier (a Scale AI company), I worked on Generative AI, Prompt Engineering, and AI Training. My role focused on refining AI models by crafting prompts, evaluating responses, and improving model accuracy.This experience enhanced my skills in AI fine-tuning, data training, and model optimization while providing hands-on exposure to real-world AI challenges.',
+      'As a Freelance Software Engineer at Outlier (Scale AI), I worked on Generative AI, Prompt Engineering, and AI Training. My role involved crafting prompts, evaluating AI responses, and optimizing model accuracy. This experience enhanced my expertise in AI fine-tuning and real-world model development.',
     icon: '/assets/outlier.jpeg',
     animation: 'victory',
   },

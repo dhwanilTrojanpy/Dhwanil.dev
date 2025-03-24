@@ -270,7 +270,7 @@ export const workExperiences = [
     title:
       'Built AI education tools using LangChain/OpenAI LLMs (GPT-4, Llama-3) and Python(FastAPI) with hybrid RAG architectures, improving semantic search precision by 25% and reducing inference costs via model quantization.',
     icon: '/assets/realityai.jpeg',
-    animation: 'victory',
+    animation: 'salute',
   },
 
   {

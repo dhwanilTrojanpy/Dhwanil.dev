@@ -10,8 +10,8 @@ const Footer = () => {
       <div className="flex gap-3">
         <div className="social-icon">
           <a href="https://github.com/dhwanilTrojanpy" className="social-icon">
-              <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
-          </a>       
+            <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
+          </a>
         </div>
         {/* <div className="social-icon">
           <img src="/assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2" />
@@ -20,9 +20,7 @@ const Footer = () => {
           <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2" />
         </div> */}
       </div>
-      <p className="text-white-500">
-  © {new Date().getFullYear()} Dhwanil Gandhi. All rights reserved.
-</p>
+      <p className="text-white-500">© {new Date().getFullYear()} Dhwanil Gandhi. All rights reserved.</p>
     </footer>
   );
 };

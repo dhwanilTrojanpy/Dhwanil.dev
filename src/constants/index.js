@@ -272,6 +272,7 @@ export const workExperiences = [
     icon: '/assets/realityai.jpeg',
     animation: 'victory',
   },
+
   {
     id: 2,
     name: 'ITSM America',
@@ -284,6 +285,16 @@ export const workExperiences = [
   },
   {
     id: 3,
+    name: 'Outlier',
+    pos: 'Freelance Software Engineer - AI Trainer',
+    duration: '2024 - 2025',
+    title:
+      'As a Freelance Software Engineer at Outlier (a Scale AI company), I worked on Generative AI, Prompt Engineering, and AI Training. My role involved crafting high-quality prompts, evaluating AI-generated responses, and refining model outputs to enhance performance.Collaborating with AI experts, I contributed to training datasets and improving model accuracy across various domains. This experience strengthened my skills in AI evaluation, fine-tuning, and human-in-the-loop model development.',
+    icon: '/assets/outlier.jpeg',
+    animation: 'victory',
+  },
+  {
+    id: 4,
     name: 'NRI Distributions',
     pos: 'Software Engineer',
     duration: '2022',
@@ -293,7 +304,7 @@ export const workExperiences = [
     animation: 'salute',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Goldenmace IT',
     pos: 'Python Developer',
     duration: '2019-2021',

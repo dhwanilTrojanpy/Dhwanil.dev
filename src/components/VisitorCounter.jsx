@@ -5,7 +5,7 @@ const VisitorCounter = () => {
   const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/visitors')
+    fetch('https://' + window.location.hostname + '/api/visitors')
       .then(response => response.json())
       .then(data => setVisitorCount(data.count))
       .catch(error => console.error('Error fetching visitor count:', error));

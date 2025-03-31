@@ -73,7 +73,7 @@ const About = () => {
                 I&apos;m based in <strong className="text-white"> Toronto, Canada </strong>and open to remote work
                 worldwide.
               </p>
-              <a href="#about" className="w-fit">
+              <a href="#contact" className="w-fit">
                 <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
               </a>
             </div>

@@ -8,7 +8,6 @@ import {useRef, useEffect} from 'react';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
-  const contactSectionRef = useRef(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('dhwanilgandhi28@gmail.com');
@@ -20,8 +19,9 @@ const About = () => {
   };
 
   const scrollToContact = () => {
-    if (contactSectionRef.current) {
-      contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

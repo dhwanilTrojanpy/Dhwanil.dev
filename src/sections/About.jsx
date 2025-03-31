@@ -3,8 +3,7 @@ import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
 //Added import for smooth scrolling
-import {useRef, useEffect} from 'react';
-
+import { useRef, useEffect } from 'react';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -18,14 +17,6 @@ const About = () => {
     }, 2000);
   };
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-
   return (
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
@@ -36,8 +27,9 @@ const About = () => {
             <div>
               <p className="grid-headtext"> Hi, I&apos;m Dhwanil Gandhi</p>
               <p className="grid-subtext">
-                With 5 years of experience, I have honed my skills in both  <strong className='text-white'>frontend, backend </strong> and <strong className='text-white'> Generative AI</strong>, creating dynamic
-                and responsive Software.
+                With 5 years of experience, I have honed my skills in both{' '}
+                <strong className="text-white">frontend, backend </strong> and{' '}
+                <strong className="text-white"> Generative AI</strong>, creating dynamic and responsive Software.
               </p>
             </div>
           </div>
@@ -50,7 +42,9 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools including <strong className='text-white'>Python, C#, </strong> and <strong className='text-white'> JavaScript</strong> that allow me to build robust and scalable
+                I specialize in a variety of languages, frameworks, and tools including{' '}
+                <strong className="text-white">Python, C#, </strong> and{' '}
+                <strong className="text-white"> JavaScript</strong> that allow me to build robust and scalable
                 applications
               </p>
             </div>
@@ -75,8 +69,13 @@ const About = () => {
             </div>
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in <strong className='text-white'> Toronto, Canada </strong>and open to remote work worldwide.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" onClick={scrollToContact} />
+              <p className="grid-subtext">
+                I&apos;m based in <strong className="text-white"> Toronto, Canada </strong>and open to remote work
+                worldwide.
+              </p>
+              <a href="#about" className="w-fit">
+                <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              </a>
             </div>
           </div>
         </div>
@@ -107,7 +106,9 @@ const About = () => {
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">dhwanilgandhi28@gmail.com</p>
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
+                  dhwanilgandhi28@gmail.com
+                </p>
               </div>
             </div>
           </div>

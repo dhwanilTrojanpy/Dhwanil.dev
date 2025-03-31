@@ -2,9 +2,13 @@ import { useState } from 'react';
 import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
+//Added import for smooth scrolling
+import {useRef, useEffect} from 'react';
+
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const contactSectionRef = useRef(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('dhwanilgandhi28@gmail.com');
@@ -14,6 +18,13 @@ const About = () => {
       setHasCopied(false);
     }, 2000);
   };
+
+  const scrollToContact = () => {
+    if (contactSectionRef.current) {
+      contactSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
 
   return (
     <section className="c-space my-20" id="about">
@@ -65,7 +76,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
               <p className="grid-subtext">I&apos;m based in <strong className='text-white'> Toronto, Canada </strong>and open to remote work worldwide.</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+              <Button name="Contact Me" isBeam containerClass="w-full mt-10" onClick={scrollToContact} />
             </div>
           </div>
         </div>
